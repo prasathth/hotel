@@ -1,0 +1,178 @@
+
+.header{
+  background-color: #336FA0 ;
+  height:10% ;
+  width: 100% ;
+  position: fixed ;
+  left: 0% ;
+  box-shadow: 6px 6px 6px gray;
+}
+
+.heading{
+  font-family: Bradley Hand ITC;
+  font-size: 38px;
+  color: white ;
+  font-weight:bold;
+  top: 7%;
+  left:2%;
+  position: absolute;
+  text-shadow: 2px 2px 4px white;
+
+}
+
+.items{
+  position: absolute;
+  top: 20% ;
+  left : 25% ;
+  height: 50vh ;
+  overflow: auto ;
+}
+
+table{
+  height: 100px !important;
+  overflow: auto ;
+}
+th{
+  position: fixed ;
+}
+tr,th{
+  height : 70px ;
+}
+td{
+  width : 150px ;
+  text-align : center ;
+}
+.menu{
+  font-family: sans-serif ;
+  font-size: 20px ;
+  color : black ;
+}
+.sub {
+    background-color: #336FA0; /* Green */
+    border: none;
+    color: white;
+    padding: 15px 32px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    margin: 4px 2px;
+    cursor: pointer;
+    transition-duration: 0.4s;
+    position: absolute;
+    top: 77% ;
+    left : 48% ;
+}
+
+.sub:hover {
+    box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2), 0 6px 20px 0 rgba(0,0,0,0.19);
+}
+
+img{
+   width : 50px ;
+   height : 50px ;
+}
+
+.di{
+  font-family: serif ;
+  font-size : 20px ;
+  color : black ;
+}
+.modal {
+    display: none; /* Hidden by default */
+    position: fixed; /* Stay in place */
+    z-index: 1; /* Sit on top */
+    padding-top: 100px; /* Location of the box */
+    left: 0;
+    top: 0;
+    width: 100%; /* Full width */
+    height: 100%; /* Full height */
+    overflow: auto; /* Enable scroll if needed */
+    background-color: rgb(0,0,0); /* Fallback color */
+    background-color: rgba(0,0,0,0.4); /* Black w/ opacity */
+}
+
+/* Modal Content */
+.modal-content {
+    background-color: #fefefe;
+    margin: auto;
+    padding: 20px;
+    border: 1px solid #888;
+    width: 40%;
+    height: 50vh ;
+    overflow: auto ;
+}
+
+/* The Close Button */
+.close {
+    color: white;
+    float: right;
+    font-size: 35px;
+    font-weight: bold;
+    position : relative ;
+    right : 2% ;
+    top:0px;
+}
+.total{
+  top:0px;
+  position: relative;
+  left:210px;
+  width:200px;
+  top:40px;
+}
+.close:hover,
+.close:focus {
+    color: #000;
+    text-decoration: none;
+    cursor: pointer;
+}
+.con {
+    background-color: #336FA0; /* Green */
+    border: none;
+    color: white;
+    padding: 15px 32px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    margin: 4px 2px;
+    cursor: pointer;
+    transition-duration: 0.4s;
+    position: relative;
+    top: 40px ;
+    left : 40% ;
+}
+
+.con:hover {
+    box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2), 0 6px 20px 0 rgba(0,0,0,0.19);
+}
+
+.modalItems{
+  position: relative ;
+  top : 28px ;
+  height:210px;
+  overflow: auto;
+}
+.modalItems tr{
+  height: 45px;
+}
+.Modalheader{
+  background-color: #336FA0 ;
+  height: 40px ;
+  position: fixed ;
+  width : 42% ;
+  left : 29% ;
+  top : 16% ;
+
+}
+#modalElementTable{
+  left:-70px;
+  position: relative;
+}
+.ord{
+  font-size: 25px ;
+  color : white ;
+  position: relative;
+  top : 15% ;
+  left : 2% ;
+}

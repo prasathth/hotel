@@ -1,0 +1,114 @@
+<html>
+  <head>
+    <link rel="stylesheet" type="text/css" href="external.css">
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+  </head>
+  <body>
+    <div class="header">
+      <label class="heading">RESTAURANT</label>
+    </div>
+<div>
+    <!-- <form name="f"> -->
+      <div class="items">
+        <table id="elementTable">
+          <th class="menu">
+
+            <td>MENU</td>
+            <td>PRICE</td>
+            <td>QUANTITY</td>
+          </th>
+        </table>
+        <!-- <table width="500px" border="0">
+          <tr class="menu">
+            <td></td>
+            <td><center>Menu</center></td>
+            <td><center>Price</center></td>
+            <td><center>Quantity</center></td>
+          </tr>
+          <tr class="di">
+            <td><img src="1.jpg"></td>
+            <td><center>Dosai</center></td>
+            <td><center>50</center></td>
+            <td><center><input type="text" style="width:30px;height:20px;" name="n1"></center</td>
+          </tr>
+        </table> -->
+
+      </div>
+        <input class="sub" type="submit" name="n" value="order" onclick="fun()">
+    <!--s</form> -->
+</div>
+<div id="myModal" class="modal">
+
+  <!-- Modal content -->
+  <div class="modal-content">
+    <div class="Modalheader">
+      <font class="ord">Confirm Order</font>
+    <span class="close" onclick="closeModal()">&times;</span>
+  </div>
+    <div class="modalItems">
+      <table id="modalElementTable">
+        <th class="menu">
+          <td>MENU</td>
+          <td>PRICE</td>
+          <td>QUANTITY</td>
+        </th>
+      </table>
+    </div>
+    <div class="total"> </div>
+    <a href="home.html"><button class="con" name="b" value="confirm">confirm</button></a>
+  </div>
+
+</div>
+    <script>
+    $(document).ready(function(){
+      createTable();
+    });
+    var elem = [
+          {'img':'<img src="1.jpg">','name':'Dosai','price':'50','textbox':'<input type="number" id="dosa" style="width:30px;height:20px;">','id':'dosa'},
+          {'img':'<img src="2.jpg">','name':'Idli','price':'25','textbox':'<input type="number" id="idli" style="width:30px;height:20px;">','id':'idli'},
+          {'img':'<img src="3.jpg">','name':'Chappathi','price':'75','textbox':'<input type="number" id="chappathi" style="width:30px;height:20px;">','id':'chappathi'},
+          {'img':'<img src="4.jpg">','name':'Puri','price':'80','textbox':'<input type="number" id="puri" style="width:30px;height:20px;">','id':'puri'},
+          {'img':'<img src="5.jpg">','name':'Mutton Biriyani','price':'200','textbox':'<input type="number" id="mbriyani" style="width:30px;height:20px;">','id':'mbriyani'},
+          {'img':'<img src="6.png">','name':'Chicken Biriyani','price':'150','textbox':'<input type="number" id="cbriyani"  style="width:30px;height:20px;">','id':'cbriyani'},
+          {'img':'<img src="7.jpg">','name':'IceCreams','price':'100','textbox':'<input type="number" id="ice" style="width:30px;height:20px;">','id':'ice'}
+        ];
+      var selectedItems = [];
+
+      function createTable(){
+        $.each(elem, function( index, value ) {
+        $("#elementTable").append("<tr><td id='img'>" +value.img+"</td><td id='name'>"+ value.name +"</td><td id='price'>" + value.price +"</td> <td>" + value.textbox +" </td>"); //  $("#elementTable").append("tr");
+      });
+
+      }
+
+      function fun(){
+        var count = 0;
+        $.each(elem, function( index, value ) {
+          //alert($('#'+value.id).val());
+          var qty = $('#'+value.id).val();
+          if(qty != 0 || qty != '' ){
+            selectedItems.push({'name':value.name,'price':value.price,'Quantity': qty});
+            count++;
+          }
+
+        });
+        if(count == 0){
+          alert("select atleast one item");
+        }else{
+          var total=0;
+          $("#myModal").css('display','block');
+          $.each(selectedItems, function( index, value ) {
+            total += value.price * value.Quantity;
+            $("#modalElementTable").append("<tr><td></td><td id='name'>"+ value.name +"</td><td id='price'>" + value.price +"</td> <td>" + value.Quantity +"</td></tr>"); //  $("#elementTable").append("tr")
+          });
+        $(".total").append('Total amount : Rs.' + total);
+        }
+      }
+      function closeModal() {
+        selectedItems = [];
+        $("#modalElementTable tr:not(:first)").remove();
+        $("#myModal").css('display','none');
+}
+    </script>
+  </body>
+</html>
